@@ -16,7 +16,7 @@ class MazeSolver:
     def solve_maze(self, maze, x, y):
         print("bug: ", maze[18][17])
         # print(maze[y][x])
-        if maze[y][x] == ' ':
+        if y > -1 and y < len(maze) and x > -1 and x < len(maze[y]) and maze[y][x] == ' ':
             maze[y][x] = '#'
             # check if right tile is open
             if x + 1 < len(maze[y]) and (maze[y][x + 1] != "+" and maze[y][x + 1] != "|"):
@@ -50,7 +50,7 @@ def print_maze(maze):
 
 def animate(maze):
     print_maze(maze)
-    for i in range(0, 2):
+    for i in range(0, 5):
         print("")
     time.sleep(0.05)
 
